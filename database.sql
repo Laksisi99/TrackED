@@ -89,7 +89,6 @@ CREATE TABLE Courses (
     FOREIGN KEY (Lecturer_ID) REFERENCES Lecturers(Lecturer_ID)
 );
 
-
 -- Table for Semester Courses (Mapping of Courses to Semesters)
 CREATE TABLE Semester_Courses (
     Semester_ID INT,
