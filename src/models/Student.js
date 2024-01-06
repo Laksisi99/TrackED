@@ -1,14 +1,3 @@
-// -- Table for Students
-// CREATE TABLE Students (
-//     Student_ID INT PRIMARY KEY AUTO_INCREMENT,
-//     Student_Name VARCHAR(50) NOT NULL,
-//     Student_Reg_Num VARCHAR(20) UNIQUE NOT NULL,
-//     Student_Email VARCHAR(100) UNIQUE NOT NULL,
-//     Student_Contact_Number VARCHAR(15),
-//     Batch_ID INT,
-//     FOREIGN KEY (Batch_ID) REFERENCES Batches(Batch_ID)
-// );
-
 const { query } = require('../config/database');
 
 //Student model is an object that contains functions to interact with the database
