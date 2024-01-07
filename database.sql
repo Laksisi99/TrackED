@@ -126,3 +126,48 @@ CREATE TABLE Login_Details (
     FOREIGN KEY (User_ID) REFERENCES Non_Academic_Staff(Non_Academic_Staff_ID) ON DELETE CASCADE
     \-- ON DELETE CASCADE is used to delete the login details of a user when the user is deleted from the database
 );
+
+CREATE TABLE JWTTokensStudent
+(
+    TokenID INT PRIMARY KEY AUTO_INCREMENT,
+    Token   VARCHAR(255) NOT NULL,
+    RefreshToken VARCHAR(255) NOT NULL,
+    UserID  INT,
+    FOREIGN KEY (UserID) REFERENCES Customers (Student_ID)
+);
+
+CREATE TABLE JWTTokensLecturer
+(
+    TokenID INT PRIMARY KEY AUTO_INCREMENT,
+    Token   VARCHAR(255) NOT NULL,
+    RefreshToken VARCHAR(255) NOT NULL,
+    UserID  INT,
+    FOREIGN KEY (UserID) REFERENCES Customers (Lecturer_ID)
+);
+
+CREATE TABLE JWTTokensAdmin
+(
+    TokenID INT PRIMARY KEY AUTO_INCREMENT,
+    Token   VARCHAR(255) NOT NULL,
+    RefreshToken VARCHAR(255) NOT NULL,
+    UserID  INT,
+    FOREIGN KEY (UserID) REFERENCES Customers (Admin_ID)
+);
+
+CREATE TABLE JWTTokensAcademicStaff
+(
+    TokenID INT PRIMARY KEY AUTO_INCREMENT,
+    Token   VARCHAR(255) NOT NULL,
+    RefreshToken VARCHAR(255) NOT NULL,
+    UserID  INT,
+    FOREIGN KEY (UserID) REFERENCES Customers (Staff_ID)
+);
+
+CREATE TABLE JWTTokensNonAcademicStaff
+(
+    TokenID INT PRIMARY KEY AUTO_INCREMENT,
+    Token   VARCHAR(255) NOT NULL,
+    RefreshToken VARCHAR(255) NOT NULL,
+    UserID  INT,
+    FOREIGN KEY (UserID) REFERENCES Customers (Non_Academic_Staff_ID)
+);
